@@ -6,10 +6,23 @@ namespace ASPNetGerenciadorVeiculos.Pages.Veiculos
 {
     public class DetalharModel : PageModel
     {
-        public List<Veiculo> Veiculos { get; set; }
-        public void OnGet()
+        public Veiculo Veiculo { get; set; }
+        public IActionResult OnGet(int id)
         {
-            Veiculos = new List<Veiculo>();
+            var veiculos = CarregarVeiculos();
+
+            Veiculo = veiculos.FirstOrDefault(u => u.Id == id);
+
+            if (Veiculo == null)
+            {
+                return RedirectToPage("/Veiculos/Index");
+            }
+            return Page();
+        }
+
+        public List<Veiculo> CarregarVeiculos()
+        {
+            var Veiculos = new List<Veiculo>();
             if (System.IO.File.Exists("veiculos.txt"))
             {
                 var linhas = System.IO.File.ReadAllLines("veiculos.txt");
@@ -31,11 +44,10 @@ namespace ASPNetGerenciadorVeiculos.Pages.Veiculos
                         AnoModelo = int.Parse(dados[6]),
                         DirFoto = dados[7]
                     };
-
                     Veiculos.Add(veiculo);
-
                 }
             }
+            return Veiculos;
         }
     }
 }

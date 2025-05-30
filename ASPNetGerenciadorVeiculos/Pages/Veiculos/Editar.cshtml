@@ -1,4 +1,54 @@
-﻿@page
+﻿@page "{id:int}"
 @model ASPNetGerenciadorVeiculos.Pages.Veiculos.EditarModel
 @{
+    ViewData["Title"] = "Editar Veículo";
+}
+<h2 class="text-white text-center mb-4">@ViewData["Title"]</h2>
+
+<form method="post" class="text-white p-4 rounded shadow" style="background-color: #001f3f; max-width: 400px; margin: auto;">
+    <input type="hidden" asp-for="Veiculo.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Veiculo.Nome" class="form-label"></label>
+        <input asp-for="Veiculo.Nome" class="form-control" />
+        <span asp-validation-for="Veiculo.Nome" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.Modelo" class="form-label"></label>
+        <input asp-for="Veiculo.Modelo" class="form-control" />
+        <span asp-validation-for="Veiculo.Modelo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.Marca" class="form-label"></label>
+        <input asp-for="Veiculo.Marca" class="form-control" type="text" />
+        <span asp-validation-for="Veiculo.Marca" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.Renavam" class="form-label"></label>
+        <input asp-for="Veiculo.Renavam" class="form-control" type="text" />
+        <span asp-validation-for="Veiculo.Renavam" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.AnoFabricacao" class="form-label"></label>
+        <input asp-for="Veiculo.AnoFabricacao" class="form-control" type="number" />
+        <span asp-validation-for="Veiculo.AnoFabricacao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.AnoModelo" class="form-label"></label>
+        <input asp-for="Veiculo.AnoModelo" class="form-control" type="number" />
+        <span asp-validation-for="Veiculo.AnoModelo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Veiculo.DirFoto" class="form-label"></label>
+        <input asp-for="Veiculo.DirFoto" class="form-control" type="text" />
+        <span asp-validation-for="Veiculo.DirFoto" class="text-danger"></span>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a class="btn btn-secondary ms-2" asp-page="/Veiculos/Index">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

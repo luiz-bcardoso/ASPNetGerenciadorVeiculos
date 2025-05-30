@@ -5,30 +5,38 @@
 }
 <h2>@ViewData["Title"]</h2>
 <p>
-    <a class="btn btn-primary" asp-page="/Usuarios/Criar">Cadastrar Veículo</a>
+    <a class="btn btn-primary" asp-page="/Veiculos/Cadastrar">Cadastrar Veículo</a>
 </p>
 <p>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
             <td>Id</td>
-            <td>Usuário</td>
-            <td>Senha</td>
-            <td>E-mail</td>
+            <td>Nome</td>
+            <td>Modelo</td>
+            <td>Marca</td>
+            <td>Renavam</td>
+            <td>Ano de Fabricação</td>
+            <td>Ano do Modelo</td>
+            <td>Foto</td>
         </tr>
     </thead>
     <tbody>
             @foreach(var veiculo in Model.Veiculos)
             {
                 <tr>
-                    <th>@veiculo.Id</th>
-                    <th>@veiculo.Nome</th>
-                    <th>@veiculo.Modelo</th>
-                    <th>@veiculo.Marca</th>
-                    <th>@veiculo.Renavam</th>
-                    <th>@veiculo.AnoFabricacao</th>
-                    <th>@veiculo.AnoModelo</th>
-                    <th>@veiculo.DirFoto</th>
+                    <td>@veiculo.Id</td>
+                    <td>@veiculo.Nome</td>
+                    <td>@veiculo.Modelo</td>
+                    <td>@veiculo.Marca</td>
+                    <td>@veiculo.Renavam</td>
+                    <td>@veiculo.AnoFabricacao</td>
+                    <td>@veiculo.AnoModelo</td>
+                    <td>@veiculo.DirFoto</td>
+                    <td>
+                    <a class="btn btn-info btn-sm" asp-page="/Veiculos/Detalhar" asp-route-id="@veiculo.Id">Detalhes</a>
+                    <a class="btn btn-warning btn-sm" asp-page="/Veiculos/Editar" asp-route-id="@veiculo.Id">Editar</a>
+                    </td>
                 </tr>
             }
         </tbody>
