@@ -1,0 +1,49 @@
+﻿@page
+@model ASPNetGerenciadorVeiculos.Pages.Veiculos.CadastrarModel
+@{
+    ViewData["Title"] = "Cadastrar Veículo";
+}
+<h2>@ViewData["Title"]</h2>
+<form method="post">
+    <div class="mb-3">
+        <label for="Id" class="form-label">ID: </label>
+        <input type="text" class="form-control" id="id" name="Veiculo.Id" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome: </label>
+        <input type="text" class="form-control" id="nome" name="Veiculo.Nome" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo: </label>
+        <input type="text" class="form-control" id="modelo" name="Veiculo.Modelo" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="marca" class="form-label">Marca: </label>
+        <input type="text" class="form-control" id="marca" name="Veiculo.Marca" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="ranavam" class="form-label">Renavam: </label>
+        <input type="text" class="form-control" id="ranavam" name="Veiculo.Renavam" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="anoFabricacao" class="form-label">Ano de Fabricação: </label>
+        <input type="text" class="form-control" id="anoFabricacao" name="Veiculo.AnoFabricaco" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="anoModelo" class="form-label">Ano do Modelo: </label>
+        <input type="text" class="form-control" id="anoModelo" name="Veiculo.AnoModelo" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="dirFoto" class="form-label">Foto do Veículo (Opcional): </label>
+        <input type="text" class="form-control" id="dirFoto" name="Veiculo.DirFoto" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>

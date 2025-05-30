@@ -1,0 +1,39 @@
+﻿@page "{id:int}"
+@model ASPNetGerenciadorVeiculos.Pages.Veiculos.DetalharModel
+@{
+    ViewData["Title"] = "Detalhes do veículo";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <label>Id: </label>
+    <span>@Model.Veiculo.Id</span>
+</div>
+<div>
+    <label>Nome: </label>
+    <span>@Model.Veiculo.Nome</span>
+</div>
+<div>
+    <label>Modelo: </label>
+    <span>@Model.Veiculo.Modelo</span>
+</div>
+<div>
+    <label>Marca: </label>
+    <span>@Model.Veiculo.Marca</span>
+</div>
+<div>
+    <label>Renavam: </label>
+    <span>@Model.Veiculo.Renavam</span>
+</div>
+<div>
+    <label>AnoFabricacao: </label>
+    <span>@Model.Veiculo.AnoFabricacao</span>
+</div>
+<div>
+    <label>AnoModelo: </label>
+    <span>@Model.Veiculo.AnoModelo</span>
+</div>
+<div>
+    <label>DirFoto: </label>
+    <span>@Model.Veiculo.DirFoto</span>
+</div>
