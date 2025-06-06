@@ -1,2 +1,2 @@
-10;fusca;beetle;volks;346496784605;0;1940;agora tem :D
-230;carro...;Mobi;Fiat;3459834598;0;2018;:(
+10;fusca;beetle;volks;346496784605;2026;1945;agora tem :D
+230;carro...;Mobi;Fiat;3459834598;2000;2018;:(
